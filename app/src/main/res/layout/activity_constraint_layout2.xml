@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 顶部 Tab 栏 -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioSpaceStations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/space_station_icon"
+            android:gravity="center"
+            android:text="Space Stations"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioFlights"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rocket_icon"
+            android:gravity="center"
+            android:text="Flights"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioRovers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rover_icon"
+            android:gravity="center"
+            android:text="Rovers"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <!-- 中间 DCA 和 MARS 区域 -->
+    <TextView
+        android:id="@+id/tvDCA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_bg"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="DCA"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivDoubleArrows"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <ImageView
+        android:id="@+id/ivDoubleArrows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDCA"
+        app:layout_constraintEnd_toEndOf="@+id/tvMARS"
+        app:layout_constraintStart_toStartOf="@+id/tvMARS"
+        app:layout_constraintTop_toTopOf="@+id/tvDCA" />
+
+    <TextView
+        android:id="@+id/tvMARS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_bg"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="MARS"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivDoubleArrows"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <!-- One Way 开关 -->
+    <TextView
+        android:id="@+id/tvOneWayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="One Way"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDCA"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+    <Switch
+        android:id="@+id/switchOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOneWayLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvOneWayLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvOneWayLabel"
+        android:layout_marginEnd="16dp" />
+
+    <!-- 1 Traveller 文本 -->
+    <TextView
+        android:id="@+id/tvTraveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_bg"
+        android:padding="8dp"
+        android:text="1 Traveller"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvOneWayLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvOneWayLabel"
+        android:layout_marginTop="8dp" />
+
+    <!-- 中间星系和火箭图片 -->
+    <ImageView
+        android:id="@+id/ivGalaxy"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/galaxy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTraveller"
+        android:layout_marginTop="32dp" />
+
+    <ImageView
+        android:id="@+id/ivRocketSmall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/rocket_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/ivGalaxy"
+        app:layout_constraintEnd_toStartOf="@+id/ivGalaxy"
+        android:layout_marginEnd="16dp" />
+
+    <!-- 底部 DEPART 按钮 -->
+    <Button
+        android:id="@+id/btnDepart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/green_button"
+        android:text="DEPART"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

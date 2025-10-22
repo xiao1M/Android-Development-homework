@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@drawable/list_item_selector"> <!-- 添加这行 -->
+
+    <!-- 动物名称 -->
+    <TextView
+        android:id="@+id/tv_animal_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"/> <!-- 确保文字颜色可见 -->
+
+    <!-- 动物图片 -->
+    <ImageView
+        android:id="@+id/iv_animal_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/animal_image_desc"/>
+</LinearLayout>
